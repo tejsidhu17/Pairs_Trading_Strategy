@@ -12,7 +12,7 @@ def get_historical_data(tickers, period):
 
     for tick in tickers:
         ticker_data =  yf.download(tick, period=period)
-        data = pd.concat([data, ticker_data["Adj Close"]], axis=1) 
+        data = pd.concat([data, ticker_data["Close"]], axis=1) 
         names.append(tick)
 
     data.columns = names
